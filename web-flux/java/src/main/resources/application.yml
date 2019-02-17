@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    name: test
+    url: jdbc:mysql://43.250.238.9:3306/doctor?useUnicode=true&characterEncoding=UTF-8&useSSL=false&failOverReadOnly=false
+    username: doctor
+    password: Pve6kqL$lKow6R9dccp$
+    # 使用druid数据源
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
