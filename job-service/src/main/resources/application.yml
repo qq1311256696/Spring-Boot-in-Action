@@ -14,6 +14,6 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
-    password: Happyday1311@csj
+    password: root
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:mysql://140.143.163.57/quartz?characterEncoding=UTF-8&useSSL=false
+    url: jdbc:mysql://127.0.0.1/quartz?characterEncoding=UTF-8&useSSL=false
