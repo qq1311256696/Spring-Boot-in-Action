@@ -1,0 +1,19 @@
+server:
+  port: 8094
+#logging:
+#  level: debug
+mybatis:
+  #mapper-locations: classpath:mapper/*.xml
+  type-aliases-package:  job
+mapper:
+  mappers:
+    - tk.mybatis.mapper.common.Mapper
+  notEmpty: true
+#开发环境
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: Happyday1311@csj
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:mysql://140.143.163.57/quartz?characterEncoding=UTF-8&useSSL=false
