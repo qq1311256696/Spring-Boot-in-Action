@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.3.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>com.xyh</groupId>
+    <artifactId>demo</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>Spring boot csj</name>
+
+    <developers>
+        <developer>
+            <id>csj</id>
+            <name>csj</name>
+            <email>1311256696@qq.com</email>
+            <organization>rmjk</organization>
+            <url>https://github.com/qq1311256696</url>
+        </developer>
+    </developers>
+
+    <!-- 版本号管理 -->
+    <properties>
+        <docker.image.prefix>rmjk</docker.image.prefix>
+        <!-- Dependency Versions -->
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <spring-cloud.version>Finchley.SR2</spring-cloud.version>
+        <spring-boot.version>2.0.6.RELEASE</spring-boot.version>
+        <spring-cloud-starter-alibaba-nacos-discovery.version>0.2.1.RELEASE</spring-cloud-starter-alibaba-nacos-discovery.version>
+        <net.java.dev.jna.jna>3.0.9</net.java.dev.jna.jna>
+        <mysql.version>5.1.46</mysql.version>
+        <mybatis.version>1.3.2</mybatis.version>
+        <lombok.version>1.16.18</lombok.version>
+        <druid.version>1.0.11</druid.version>
+        <fastjson.version>1.2.5</fastjson.version>
+        <commons-io>2.6</commons-io>
+        <mysql-connector-java>5.1.46</mysql-connector-java>
+        <com.alibaba.druid>1.0.11</com.alibaba.druid>
+        <org.apache.commons.commons-pool2>2.4.2</org.apache.commons.commons-pool2>
+        <httpmime.version>4.5.5</httpmime.version>
+        <guava.version>20.0</guava.version>
+        <!-- Dependency Versions -->
+        <spring-cloud-commons.version>2.0.2.RELEASE</spring-cloud-commons.version>
+        <spring-cloud-netflix.version>2.0.2.RELEASE</spring-cloud-netflix.version>
+        <spring-cloud-openfeign.version>2.0.2.RELEASE</spring-cloud-openfeign.version>
+        <spring-cloud-bus.version>2.0.0.RELEASE</spring-cloud-bus.version>
+
+        <junit.version>4.12</junit.version>
+        <javax-servlet-api>3.0</javax-servlet-api>
+        <slf4j-api.version>1.7.25</slf4j-api.version>
+
+        <!-- Maven Plugin Versions -->
+        <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
+        <maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
+        <maven-surefire-plugin.version>2.21.0</maven-surefire-plugin.version>
+        <gmavenplus-plugin.version>1.6</gmavenplus-plugin.version>
+        <io.springfox-springfox-swagger2.version>2.8.0</io.springfox-springfox-swagger2.version>
+        <io.springfox-springfox-swagger-ui.version>2.8.0</io.springfox-springfox-swagger-ui.version>
+
+        <!--    个推    -->
+        <com.gexin.platform.sdk>4.1.0.1</com.gexin.platform.sdk>
+    </properties>
+
+    <modules>
+        <module>job</module>
+        <module>mahout</module>
+        <module>redis</module>
+        <module>springboot_banner</module>
+        <!--<module>../</module>-->
+    </modules>
+
+    <dependencyManagement>
+
+        <dependencies>
+            <dependency>
+                <groupId>com.rmjk</groupId>
+                <artifactId>service-common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.java.dev.jna</groupId>
+                <artifactId>jna</artifactId>
+                <version>${net.java.dev.jna.jna}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-parent</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+                <version>${spring-cloud-starter-alibaba-nacos-discovery.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+                <!--<type>pom</type>-->
+                <!--<scope>import</scope>-->
+            </dependency>
+
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons-io}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql-connector-java}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>${com.alibaba.druid}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-pool2</artifactId>
+                <version>${org.apache.commons.commons-pool2}</version>
+            </dependency>
+
+            <!--个推SDK-->
+            <dependency>
+                <groupId>com.gexin.platform</groupId>
+                <artifactId>gexin-rp-sdk-http</artifactId>
+                <version>${com.gexin.platform.sdk}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <inherited>true</inherited>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <parameters>true</parameters>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven-surefire-plugin.version}</version>
+                <inherited>true</inherited>
+                <configuration>
+                    <forkCount>1</forkCount>
+                    <reuseForks>false</reuseForks>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <profiles>
+        <profile>
+            <id>spring</id>
+            <repositories>
+                <repository>
+                    <id>spring-snapshots</id>
+                    <name>Spring Snapshots</name>
+                    <url>https://repo.spring.io/libs-snapshot-local</url>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                    <releases>
+                        <enabled>false</enabled>
+                    </releases>
+                </repository>
+                <repository>
+                    <id>spring-milestones</id>
+                    <name>Spring Milestones</name>
+                    <url>https://repo.spring.io/libs-milestone-local</url>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                </repository>
+                <repository>
+                    <id>spring-releases</id>
+                    <name>Spring Releases</name>
+                    <url>https://repo.spring.io/release</url>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                </repository>
+            </repositories>
+            <pluginRepositories>
+                <pluginRepository>
+                    <id>spring-snapshots</id>
+                    <name>Spring Snapshots</name>
+                    <url>https://repo.spring.io/libs-snapshot-local</url>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                    <releases>
+                        <enabled>false</enabled>
+                    </releases>
+                </pluginRepository>
+                <pluginRepository>
+                    <id>spring-milestones</id>
+                    <name>Spring Milestones</name>
+                    <url>https://repo.spring.io/libs-milestone-local</url>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                </pluginRepository>
+                <pluginRepository>
+                    <id>spring-releases</id>
+                    <name>Spring Releases</name>
+                    <url>https://repo.spring.io/libs-release-local</url>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                </pluginRepository>
+            </pluginRepositories>
+        </profile>
+    </profiles>
+
+</project>
