@@ -1,0 +1,44 @@
+server:
+  port: 8085
+hys:
+  mongodb:
+    comment:
+      uri: mongodb://test:test123@43.250.238.41/
+      dataBase: comment
+    exam:
+      uri: mongodb://exam:exam123@43.250.238.41/
+      dataBase: exam
+#
+#eureka:
+#  instance:
+#    leaseRenewalIntervalInSeconds: 10 #租期更新时间间隔（默认30秒）
+#    leaseExpirationDurationInSeconds: 30 #租期到期时间（默认90秒）
+#  client:
+#    healthcheck: true
+#    serviceUrl:
+#      defaultZone: http://eureka:8761/eureka/ #指定服务注册中心的地址  http://localhost:8761/eureka/
+
+spring:
+  application:
+    name: mgdb
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  datasource:
+    name: test
+    url: jdbc:mysql://43.250.238.9:3306/doctor?useUnicode=true&characterEncoding=UTF-8&useSSL=false&failOverReadOnly=false
+    username: doctor
+    password: Pve6kqL$lKow6R9dccp$
+    # 使用druid数据源
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+
+rmjk:
+  msgService: http://10.2.113.65:8086/msg
+ribbon:
+  eureka:
+    enabled: false
+snowflakeIdWorker:
+  workerId: 1
+  datacenterId: 5
